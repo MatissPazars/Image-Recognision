@@ -17,7 +17,7 @@ the one with the closest values is picked as the one that the AI displays as bei
 
 But what about color?
 An massive flaw and problem we run into is - what if say we train the AI on red traffic signs and we will one day give it an blue traffic sign to analyze: it will fail miserably even if the image is just an Photoshop color change operation. why? because it learned
-that the COLOR in that specific pattern is the traffic sign. How to fix this? in fact its really simple to fix it - just add an aditional / parralel model that is identical to this one, just one that is only fed gray-scale versions of the same images. this one quite by
+that the COLOR in that specific pattern is the traffic sign. How to fix this? in fact its really simple to fix it - just add an additional / parallel model that is identical to this one, just one that is only fed gray-scale versions of the same images. this one quite by
 definition and nature wont be able to learn that *red* is the color it should be looking for. When evaluating an image, simply pick the output with the highest confidence: if the RGB model shows higher confidence, pick its choice, if not - then pick the gray-scale one's.
 Thus, the AI has learned GENERALIZATION - it is able to generalize what an traffic sign is able to look like, no matter the color. 
 
@@ -31,5 +31,17 @@ How do we compare / measure an AI model like such?
 Mostly in 2 values: 
 1. quality (% of guesses that are correct)
 2. quantity (the amount of things its able to categorize)
+
+How do we tell the AI what to actually categorize?
+
+At first, we have to manually define it - we have to manually give the AI specifically manually categorized items (e.g. - 10 pictures of *tractor*) and the AI will slowly learn to categorize tractors. But if we are looking extra fancy, we can even introduce an quite special
+technique of unsupervised training / categorizing. Basically - the AI is of-course looking at countless images, and it itself is able to detect patterns already, so what if it tries to categorize its own patterns?
+
+How does this self-categorization work?
+
+The AI say takes a random image - then it compares random parts of this image to countless others images and generalizes specific parts, then it labels this thing as say *category x* - afterwards a human is required to manually check and verify if category x is a valid pattern that in fact does exist as an item to recognize, or its an undefined pattern, at which point it will probably be just deleted / forgotten. 
+
+How do we test the AIs actual ability to detect the specific part of the image and not just guess based on the surrounding context? e.g. - detect a dog not by the fact that its standing next to an dog bed, but because its an dog. 
+quite simple - take the image of the dog near the dog bed and digitally alter the image to remove / replace parts of the image, such as - removing the head, body parts, the dog bed and so on. Compare the model's output guess in all of these, to figure out which one the AI is actually basing its guess on: if blacking out the dog's head severely decreases the confidence / accuracy, the AI is clearly basing its guess off of the ability to recognize an dog's head. 
 
 
