@@ -32,6 +32,9 @@ Mostly in 2 values:
 1. quality (% of guesses that are correct)
 2. quantity (the amount of things its able to categorize)
 
+So measuring an AI is like deciding between Volts (quality) or Amps (Quantity) - its best to pick both: Pick Watts. 
+
+
 How do we tell the AI what to actually categorize?
 
 At first, we have to manually define it - we have to manually give the AI specifically manually categorized items (e.g. - 10 pictures of *tractor*) and the AI will slowly learn to categorize tractors. But if we are looking extra fancy, we can even introduce an quite special
