@@ -48,3 +48,5 @@ How do we test the AIs actual ability to detect the specific part of the image a
 quite simple - take the image of the dog near the dog bed and digitally alter the image to remove / replace parts of the image, such as - removing the head, body parts, the dog bed and so on. Compare the model's output guess in all of these, to figure out which one the AI is actually basing its guess on: if blacking out the dog's head severely decreases the confidence / accuracy, the AI is clearly basing its guess off of the ability to recognize an dog's head. 
 
 A thought: what if instead of making fixed 5x5 pixel image clusters, we generated random variations of them (such as with the use of Voronoi diagrams and similar)? What if we made the cluster be sliding and not constant, i.e. - a sweeping cluster? 
+
+What is also fascinating about the image recognition AI is that most of the systems and ideas / principles used here are also the exact same ones employed by humans and other animals in their own vision. 
