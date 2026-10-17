@@ -3,7 +3,7 @@
 ## How to make an AI able to detect images?
 In fact a quite simple task:
 
-instead of trying to make the AI analyze the full image (say an 1024x1024 or whatever image), we can divide the image into smaller sections - like say 5x5 images or so on. 
+instead of trying to make the AI analyze the full image (say an 1024x1024 or whatever image), we can divide the image into smaller sections - like say 5x5 images or so on.  
 Now, in each of these smaller images, what we can do is just calculate the average RGB value of the pixels. 
 Repeat this process for each of the smaller pixel clusters.
 
