@@ -80,5 +80,13 @@ Meanwhile Neuron #45?
 
 <img width="478" height="720" alt="image" src="https://github.com/user-attachments/assets/e0466ac3-06ba-4615-aec5-93fa66bb1107" />
 
+Quite the complete mess. But still somehow its able to be 15'th largest supporter of the digit 5 without seemingly having any visual patterns other than simple noise. 
+
+## What if we look at which pixels vote for each digit?
+<img width="611" height="85" alt="image" src="https://github.com/user-attachments/assets/e413e831-dbb8-469a-9ac9-e70690154fb0" />
+
+
+
+
 
 
