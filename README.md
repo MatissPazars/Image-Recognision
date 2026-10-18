@@ -71,11 +71,13 @@ But how do we train the AI? back-propagation. Simple: we have multiple values to
 And what we in the end get is an able with 64 different pattern-recognition neurons, all aggregating into an AI capable of detecting all 10 digits with very high accuracy (upwards of >99%).
 
 ### What are the actual patterns the neurons are learning to look for?
+
 <img width="486" height="728" alt="image" src="https://github.com/user-attachments/assets/48d27b33-e87a-43da-ad61-6699e143de51" />
 
 Some are quite strictly visible, such as as we can see in this example neuron #0 is highly positive about searching for a round corner on the upper right side. As we can correctly guess, the neuron also has positive values for 0, 2, 3, 8, 9 - ALL of which have the exact same round corner on the upper right side. meanwhile the same neuron has negative values for all other numbers. 
 
 Meanwhile Neuron #45?
+
 <img width="478" height="720" alt="image" src="https://github.com/user-attachments/assets/e0466ac3-06ba-4615-aec5-93fa66bb1107" />
 
 
