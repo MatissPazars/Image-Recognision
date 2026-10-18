@@ -50,3 +50,9 @@ quite simple - take the image of the dog near the dog bed and digitally alter th
 A thought: what if instead of making fixed 5x5 pixel image clusters, we generated random variations of them (such as with the use of Voronoi diagrams and similar)? What if we made the cluster be sliding and not constant, i.e. - a sweeping cluster? 
 
 What is also fascinating about the image recognition AI is that most of the systems and ideas / principles used here are also the exact same ones employed by humans and other animals in their own vision. 
+
+
+## Actual implementation of AI image recognission (using a diferent method)
+<img width="1251" height="773" alt="image" src="https://github.com/user-attachments/assets/b4d6fb95-63a5-4b1d-a00d-0c1def299d99" />
+
+
