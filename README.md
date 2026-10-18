@@ -85,6 +85,7 @@ Quite the complete mess. But still somehow its able to be 15'th largest supporte
 ## What if we look at which pixels vote for each digit?
 <img width="611" height="85" alt="image" src="https://github.com/user-attachments/assets/e413e831-dbb8-469a-9ac9-e70690154fb0" />
 
+If you would have asked me what such images would show - I would had fully guessed you would roughly be able to see the digit itself. but no. Why? the simple explanation is that because the AI is trained to guess CORRECTLY (i.e. - its penalized for false positives), it often strictly prioritizes instead of looking for what each digit HAS, but instead on what each digit DOESN'T have. What I mean is take for example an straight vertical line a bit of-center to the right side. it naturally points to both 1 and 7. meanwhile an straight long horizontal line at the top? that is clearly 7 - thus to figure out if its 1, we often have to figure out if its NOT 7. thus - instead of looking at what it has, we look at what it does not have, by looking at its differences to others. 
 
 
 
