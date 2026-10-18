@@ -68,7 +68,7 @@ This is the final thing the 10 digit recognition neurons have to do: simply lear
 But how do we train the AI? back-propagation. Simple: we have multiple values to mutate: the individual multipliers for each matrix element (this already gives us 28x28x64 mutations) as well as the biases (64 in total) and multipliers for each digit for each matrix sum (giving us 10x64 values). Obviously, to require too much effort in training and data, what we can simply do is as prior stated is use back-propagation: simply increase the weights of those elements and weights that guessed correctly (i.e. - reward them) and loosen those that guessed incorrectly (punish them).  
 
 <img width="1259" height="834" alt="image" src="https://github.com/user-attachments/assets/36c6ceac-7e2a-40d4-b12e-5feb2e2a9a0f" />
-And what we in the end get is an able with 64 different pattern-recognition neurons, all aggregating into an AI capable of detecting all 10 digits with very high accuracy (upwards of >99%).
+And what we in the end get is an able with 64 different pattern-recognition neurons, all aggregating into an AI capable of detecting all 10 digits with very high accuracy (upwards of >97%).
 
 ### What are the actual patterns the neurons are learning to look for?
 
