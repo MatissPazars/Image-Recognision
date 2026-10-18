@@ -58,10 +58,25 @@ What is also fascinating about the image recognition AI is that most of the syst
 ### How does this work?
 First we take the whole image and convert the values of each pixel into values between 0 and 1 (0 being black, 1 being white). Now we downscale the image to ease computational need (the image is downscaled to 28x28 pixels).
 
-Now, lets generate 64 (or any other discrete amount of) matrices. These 64 matrices will be our pattern recognition. For each matrix, lets initialize them with random values between -1 and 1. (technically speaking - in the actual model used, there isnt an hard max and min, as in fact they are generating using normal distribution centered around 0. Normal distribution is a much better approach to this, but random values can also be definitely used)
+Now, lets generate 64 (or any other discrete amount of) matrices. These 64 matrices will be our pattern recognition. For each matrix, lets initialize them with random values between -1 and 1. (technically speaking - in the actual model used, there isn't an hard max and min, as in fact they are generating using normal distribution centered around 0. Normal distribution is a much better approach to this, but random values can also be definitely used)
 
 For each guess, what we will do is we will take all the 28x28 values of each pixel and multiply them by all the matrix values, in the end calculating the sum of all the matrix values. thus - getting 64 individual matrix sums. Now lets add an *bias* 
+to each (a random floating point value added to each matrix's sum) and place all the sums in a single array. 
 
+This is the final thing the 10 digit recognition neurons have to do: simply learn which of the 64 neurons correspond to which digits. How? Each of the 10 digit neurons has its own array of 64 numbers which multiply each of the 64 matrix sums. we now take the sum of all these values for each digit and that is the *confidence* for each digit. 
+
+But how do we train the AI? back-propagation. Simple: we have multiple values to mutate: the individual multipliers for each matrix element (this already gives us 28x28x64 mutations) as well as the biases (64 in total) and multipliers for each digit for each matrix sum (giving us 10x64 values). Obviously, to require too much effort in training and data, what we can simply do is as prior stated is use back-propagation: simply increase the weights of those elements and weights that guessed correctly (i.e. - reward them) and loosen those that guessed incorrectly (punish them).  
+
+<img width="1259" height="834" alt="image" src="https://github.com/user-attachments/assets/36c6ceac-7e2a-40d4-b12e-5feb2e2a9a0f" />
+And what we in the end get is an able with 64 different pattern-recognition neurons, all aggregating into an AI capable of detecting all 10 digits with very high accuracy (upwards of >99%).
+
+### What are the actual patterns the neurons are learning to look for?
+<img width="486" height="728" alt="image" src="https://github.com/user-attachments/assets/48d27b33-e87a-43da-ad61-6699e143de51" />
+
+Some are quite strictly visible, such as as we can see in this example neuron #0 is highly positive about searching for a round corner on the upper right side. As we can correctly guess, the neuron also has positive values for 0, 2, 3, 8, 9 - ALL of which have the exact same round corner on the upper right side. meanwhile the same neuron has negative values for all other numbers. 
+
+Meanwhile Neuron #45?
+<img width="478" height="720" alt="image" src="https://github.com/user-attachments/assets/e0466ac3-06ba-4615-aec5-93fa66bb1107" />
 
 
 
