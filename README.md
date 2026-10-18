@@ -55,4 +55,13 @@ What is also fascinating about the image recognition AI is that most of the syst
 ## Actual implementation of AI image recognission (using a diferent method)
 <img width="1251" height="773" alt="image" src="https://github.com/user-attachments/assets/b4d6fb95-63a5-4b1d-a00d-0c1def299d99" />
 
+### How does this work?
+First we take the whole image and convert the values of each pixel into values between 0 and 1 (0 being black, 1 being white). Now we downscale the image to ease computational need (the image is downscaled to 28x28 pixels).
+
+Now, lets generate 64 (or any other discrete amount of) matrices. These 64 matrices will be our pattern recognition. For each matrix, lets initialize them with random values between -1 and 1. (technically speaking - in the actual model used, there isnt an hard max and min, as in fact they are generating using normal distribution centered around 0. Normal distribution is a much better approach to this, but random values can also be definitely used)
+
+For each guess, what we will do is we will take all the 28x28 values of each pixel and multiply them by all the matrix values, in the end calculating the sum of all the matrix values. thus - getting 64 individual matrix sums. Now lets add an *bias* 
+
+
+
 
