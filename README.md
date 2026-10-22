@@ -7,7 +7,7 @@ instead of trying to make the AI analyze the full image (say an 1024x1024 or wha
 Now, in each of these smaller images, what we can do is just calculate the average RGB value of the pixels. 
 Repeat this process for each of the smaller pixel clusters.
 
-For each image we manually feed to the AI and we manually define what it is meant to be, the AI slowly learns the rough patterns of that image. 
+For each image we manually feed to the AI and we manually define what it is meant to be, the AI slowly learns the rough patterns of that image.  
 How? Well - as we manually tell the AI that image 1 is a *dog*, the AI is specifically taught that cluster X containing an average Red color of say 50% means being a dog. 
 We can feed the AI thus hundreds, or even thousands, of images of the same concept - the AI will slowly tend to learn patterns by generalizing / averaging the each individual RGB color in each of the clusters. 
 
